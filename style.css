@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 html,body{
@@ -11,53 +13,127 @@ html,body{
 }
 body{
     overflow: hidden;
-    background-color: #000;
+    background-color: #1D2B4C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
-img{
+/* img{
     height: 80%;
     object-fit: cover;
     transform: translate(88%,12%);
     filter: drop-shadow(0px 0px 15px #fff);
+} */
+body>h1{
+    color: #fff;
+    font-size: 6.2vw;
+    letter-spacing: -2px;
+    text-align: center;
+}
+body>h4{
+    color: #A6ACB9;
+    width: 80%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .box{
     height: 109px;
-    width: 237px;
-    background-color: #04C753;
-    /* background-color: #fff; */
+    width: 100%;
     margin: 20px;
     padding: 5px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    position: absolute;
-    top: 19%;
-    left: 39%;
+    justify-content: center;
     z-index: 1;
 }
 .box h1{
     font-size: 70px;
+    color: #fff;
+    text-align: center;
 }
-button{
+.btns button{
     margin: 0px 20px;
     border: none;
     cursor: pointer;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: position ease-in-out 0.7s;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btns button:active{
+    transform: scale(0.98);
+}
+
+.btns button:hover span{
+    color: #006EFF;
+    transition: all ease-in-out 0.7s;
+}
+.btns button span{
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 10;
+    position: relative;
 }
 button#counter{
-    position: absolute;
-    top: 54.5%;
-    left: 43.5%;
     z-index: 1;
-    display: block;
-    height: 120px;
-    width: 120px;
+    /* height: 120px;
+    width: 120px; */
     font-size: 30px;
     font-weight: 700;
-    background-color: transparent;
+    background-color: #006EFF;
+    padding: 10px 15px;
 }
 button#reset{
-    position: absolute;
-    top: 45.2%;
-    left: 53.2%;
     z-index: 1;
-    background-color: transparent;
+    /* height: 120px;
+    width: 120px; */
+    font-size: 30px;
+    font-weight: 700;
+    background-color: #fff;
+    color: #006EFF;
+    padding: 10px 15px;
+}
+button#reset:hover span{
+    color: #fff;
+}
+.btns button#counter::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: scale(0);
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    transition: all ease-in-out 0.7s;
+    border-radius: 100px;
+}
+.btns button#counter:hover::after{
+    top: 0%;
+    transform: scale(3);
+}
+.btns button#reset::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: scale(0);
+    height: 100%;
+    width: 100%;
+    background-color: #006EFF;
+    color: #fff;
+    transition: all ease-in-out 0.7s;
+    border-radius: 100px;
+}
+.btns button#reset:hover::after{
+    top: 0%;
+    transform: scale(3);
 }
